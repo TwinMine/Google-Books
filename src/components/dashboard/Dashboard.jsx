@@ -1,4 +1,5 @@
 import Header from "../header/Header"
+import MainPart from "../mainPart/MainPart"
 import Search from "../search/Search"
 
 const Dashboard = () => {
@@ -6,6 +7,7 @@ const Dashboard = () => {
         <>
         <Header />
         <Search />
+        <MainPart />
         </>
     )
 }

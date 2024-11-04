@@ -3,7 +3,7 @@ const key = import.meta.env.VITE_KEY;
 
 export async function bookFetch(search) {
     try {
-        const response = await fetch(`${url}?key=${key}&q=${(search)}`, {
+        const response = await fetch(`${url}?q=${search}&key=${key}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

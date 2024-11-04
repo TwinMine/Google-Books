@@ -1,11 +1,19 @@
-import { useRef } from "react";
+import { useContext, useRef, useState } from "react";
+import { bookFetch } from "../../functions/functions";
+import BookData from "../context/BookData";
 
 const Search = () => {
     const inputRef = useRef(null)
+    const {bookData, setBookData} = useContext(BookData)
 
-    function handleSubmit(){
-        const value = inputRef.current.value;
+   async function handleSubmit(e){
+        e.preventDefault()
+        const newBook = await bookFetch(inputRef.current.value)
+        setBookData(newBook)
     }
+
+    console.log(bookData);
+    
 
     return(
         <>
